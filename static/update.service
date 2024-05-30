@@ -1,9 +1,0 @@
-[Unit]
-Description=Executar meu_script após a inicialização
-
-[Service]
-Type=oneshot
-ExecStart=/usr/local/bin/meu_script.sh
-
-[Install]
-WantedBy=multi-user.target
