@@ -10,7 +10,6 @@ Description: Automation of "sudo apt update" and "sudo apt upgrade" commands on 
 After running the script, the update and upgrade commands will be executed automatically every time the operating system is booted up. This automation will generate a log file (update.log) located in /home/NAME_USER/ (~/) directory that can be consulted by the user.
 
 OPERATION: The script uses systemctl to create a systemd service unit that will execute a shell script file containing the update commands every time the operating system is booted up.
-What is Systemd: https://www.certificacaolinux.com.br/systemd-no-linux/
 
 1 - Copies the update.service service file contained in static/ to /etc/systemd/system, allowing systemd to recognize the new service unit.
 
@@ -37,7 +36,6 @@ Após a execução do script os comandos update e upgrade seram executados autom
 essa automatização irá gerar automaticamente um arquivo de log(update.log) localizado em /home/NAME_USER/ (~/) que poderá ser consultado pelo usuário.
 
 FUNCIONAMENTO: O script utiliza systemctl para criar uma unidade de serviço do systemd que irá executar um arquivo de shell script contendo os comandos de atualização todas as vezes que o sistema operacional for inicializado.
-O que é Systemd: https://www.certificacaolinux.com.br/systemd-no-linux/
 
 1 - copia o arquivo de serviço update.service contido em static/ para /etc/systemd/system, fazendo com que o systemd reconheça a nova unidade de serviço.
 
