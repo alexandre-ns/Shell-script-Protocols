@@ -2,10 +2,13 @@
 
 TIME_INTERVAL=5
 USER=$(whoami)
+DATE=$(date)
 
+echo > update.log
 
-"0 */5 * * * nome_do_usuario /home/$USER/update.sh"
+sudo cp script_update.sh /home/$USER/.script_update.sh
 
+"0 */$TIME_INTERVAL * * * root /home/$USER/.script_update.sh >> /home/$USER/update.log 2>&1"
 
 #copy script file
 sudo cp script_update.sh ~/.script_update.sh
