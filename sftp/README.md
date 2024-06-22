@@ -1,11 +1,24 @@
-1 - update_upgrade
 
-English
+# Arquivos
+- send_instruction.sh - executa instruções sftp remotamente a partir de um arquivo.
+- access_information.txt - armazena informações de acesso.
 
-DESCRIPTION: Automation of "sudo apt update" and "sudo apt upgrade" commands on Ubuntu Linux system. After running the script, the update and upgrade commands will be executed automatically every time the operating system is booted up. This automation will generate a log file (update.log) located in /home/NAME_USER/ (~/) directory that can be consulted by the user.
+# Execução
+### Para estabeler conexão remota é necessário preencher os campos presentes no arquivo 'access_information.txt'.
+1. CAMPOS:
+    - KEY - diretório e arquivo de chave de acesso. (exemplo: "/home/user/.ssh/id_rsa" para chaves tipo rsa)
+    - ADDRESS - Endereço do servidor remoto
+    - USER - Usuário usado para acesso.
+  
+2. Adicione as permissões necessárias.
+   
+```bash
+chmod +x send_instruction.sh
+```
 
-_________________________________________________________________________________
-
-Português
-
-DESCRIÇÃO: Automátização de comandos "sudo apt update" e "sudo apt upgrade" em sistema linux ubuntu. Após a execução do script os comandos update e upgrade seram executados automaticamente toda vez que o sistema operacioanl for inicializado, essa automatização irá gerar automaticamente um arquivo de log(update.log) localizado em /home/NAME_USER/ (~/) que poderá ser consultado pelo usuário.
+## 3. Execute o script
+  - send_instruction.sh - Executa instruções sftp remotamente a partir de um arquivo local, basta executar o script passando como parametro o arquivo com instruções.
+```bash
+./send_instruction.sh LOCALIZAÇÃO/E/NOME/ARQUIVO/INSTRUÇÕES
+./send_instruction.sh /home/usuario_local/instructions.commands
+```
